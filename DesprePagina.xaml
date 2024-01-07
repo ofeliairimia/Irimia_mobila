@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Irimia_mobila.DesprePagina"
+             Title="Despre">
+    <VerticalStackLayout Spacing="10" Margin="10">
+        <HorizontalStackLayout Spacing="10">
+            <Image Source="img.png"
+                   SemanticProperties.Description="Investigațiile din acest an"
+                   HeightRequest="300"/>
+        </HorizontalStackLayout>
+        <Label Text="Rețeaua privată de sănătate Regina Maria are la bază două principii pe care le-a urmărit mereu: specialiști de foarte bună calitate și considerația lor față de pacient. NE PASĂ DE OAMENI!"  FontSize="25" FontFamily="fantasy" />
+        <Label Text="CALL CENTER: 021 9268 (apelabil din orice retea nationala, fixa sau mobila)" FontSize="15" FontFamily="fantasy"/>
+        <Label Text="PROGRAM CALL CENTER: Luni-Vineri 7:30-21:00; Sâmbătă și Duminică: 8:00-20:00" FontSize="15" FontFamily="fantasy"/>
+
+    </VerticalStackLayout>
+</ContentPage>

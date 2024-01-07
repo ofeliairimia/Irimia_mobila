@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns:local="clr-namespace:Irimia_mobila"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Irimia_mobila.ProgramarileMele"
+             Title="Programarile Mele">
+    <StackLayout Margin="20">
+        <Editor Placeholder="Introduceți numele investigației alese"
+                Text="{Binding Descriere}"
+                 HeightRequest="50" >
+            <Editor.Behaviors>
+                <local:ComportamentDeValidare />
+            </Editor.Behaviors>
+        </Editor>
+        <Picker x:Name="ClinicaPicker" Title="Introduceți tipul clinicii"/>
+        <Label Text="Alegeți data programării"/>
+        <DatePicker
+            MinimumDate="01/01/2024"
+            MaximumDate="12/31/2025"
+            Date="01/01/2024" />
+        <Label Text="Alegeți ora dorită"/>
+        <TimePicker Time="4:15:26" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button BackgroundColor="DarkRed"
+                    Text="Salvează" MaximumWidthRequest="100"
+                    Clicked="OnSaveButtonClicked" />
+            <Button BackgroundColor="DarkRed"
+                    Grid.Column="1"
+                    Text="Șterge" MaximumWidthRequest="100"
+                    Clicked="OnDeleteButtonClicked"/>
+        </Grid>
+        <ListView x:Name="listView"
+                    Margin="20">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Detail="{Binding Descriere}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button  BackgroundColor="DarkRed"
+                 Text="Șterge Serviciu" MaximumWidthRequest="200"
+                Clicked="OnDeleteItemButtonClicked"/>
+        <Button  BackgroundColor="DarkRed"
+                Text="Adaugă investigația pentru programare" MaximumWidthRequest="400"
+                Clicked="OnChooseButtonClicked"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Irimia_mobila.ClinicaPage"
+             Title="Clinică">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Editor Placeholder="Indroduceți tipul clinicii" Margin="20"
+                    Text="{Binding NumeClinica}"
+                    HeightRequest="50" />
+            <Editor Placeholder="Introduceți adresa clinicii" Margin="20"
+                    Text="{Binding Adresa}"
+                    HeightRequest="50" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button  BackgroundColor="DarkRed"
+                         Text="Salvați Clinica" Grid.Column="0"
+                        MaximumWidthRequest="200"
+                        Clicked="OnSaveButtonClicked" />
+                <Button  BackgroundColor="DarkRed"
+                         Text="Ștergeți Clinica" Grid.Column="1"
+                        MaximumWidthRequest="200"
+                        Clicked="OnDeleteButtonClicked" />
+
+            </Grid>
+            <Button  BackgroundColor="DarkRed"
+                         Text="Arată pe hartă" 
+                        MaximumWidthRequest="200"
+                        Clicked="OnArataHartaButtonClicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
